@@ -1,0 +1,18 @@
+<h2>All Premier Division 2017 Season Players</h2>
+<br />
+<i class="glyphicon glyphicon-filter"></i> Filter Players: <input type="text" ng-model="playerFilter.name" />
+<br /><br />
+<table class="table">
+    <tr class="table-header">
+        <th ng-click="doSort('name')">Name</th>
+        <th ng-click="doSort('club')">Club</th>
+        <th ng-click="doSort('position')">Position</th>
+        <th>Date of Birth</th>
+    </tr>
+    <tr ng-repeat="player in players | filter:playerFilter | orderBy:'name'" class="repeat-animation">
+        <td>{{ player.name }}</td>
+        <td>{{ player.club }}</td>
+        <td>{{ player.position }}</td>
+        <td>{{ player.dob }}</td>
+    </tr>
+</table>
